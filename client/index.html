@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        const ws = new WebSocket("ws://localhost:8082")
+        ws.addEventListener("open", () => {
+            console.log("We are connected!")
+
+            ws.send("Hey, how's it going?")
+        })
+        ws.addEventListener("message", event => {
+            console.log(`Server has sent us : ${event.data}`)
+        })
+    </script>
+</body>
+</html>
