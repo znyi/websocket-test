@@ -10,9 +10,9 @@ wss.on("connection", (ws) => {
   console.log("New client connected");
 
   ws.on("message", (data) => {
-    console.log(`Client has sent us : ${data}`);
+    console.log(`Client says : ${data}`);
 
-    ws.send(`Server says : I am good!`)
+    ws.send(`Server says : ${data}`)
   });
 
   ws.on("close", () => {
