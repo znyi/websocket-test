@@ -12,7 +12,7 @@ wss.on("connection", (ws) => {
   ws.on("message", (data) => {
     console.log(`Client has sent us : ${data}`);
 
-    ws.send(`I am good!`)
+    ws.send(`Server says : I am good!`)
   });
 
   ws.on("close", () => {
